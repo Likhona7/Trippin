@@ -1,6 +1,6 @@
 var trippin = require("../trippin");
 var minimum = require("../minimum");
-var recoerdsFinder = require("../recordsFinder");
+var recordsFinder = require("../recordsFinder");
 var assert = require("assert");
 
 var durbanTaxis = [
@@ -121,5 +121,39 @@ assert.equal(result, 9);
 
  })
 
+
+it('should Find all the objects matching a specific condition', function(){
+
+  var taxiObj =  [{
+    "RegistrationNumber": "CA 123 456",
+   "Route": "Cape Town - Bellville",
+   "Fare": 13,
+   "Trips": 9
+  },{
+   "RegistrationNumber": "CA 123 456",
+     "Route": "Cape Town - Gugulethu",
+     "Fare": 12,
+     "Trips": 11
+   }];
+var result = recordsFinder(taxiObj, "CA 123 456");
+assert.deepEqual(result, taxiObj);
+
+});
+ it('should Find all the objects matching a specific condition', function(){
+var taxiObj = [{
+  "RegistrationNumber": "ND 123 456",
+  "Route": "Durban - University of KZN",
+  "Fare": 7,
+  "Trips": 14
+}, {
+    "RegistrationNumber": "ND 123 456",
+    "Route": "Durban - Umbilo",
+    "Fare": 8,
+    "Trips": 15
+  }];
+var result = recordsFinder(taxiObj, "ND 123 456");
+assert.deepEqual(result, taxiObj);
+
+});
 
 })
