@@ -2,6 +2,7 @@ var trippin = require("../trippin");
 var minimum = require("../minimum");
 var recordsFinder = require("../recordsFinder");
 var tripsMade4 = require("../tripsMade4");
+var RouteFinder = require("../RouteFinder")
 var assert = require("assert");
 
 var durbanTaxis = [
@@ -166,6 +167,18 @@ var result = tripsMade4(durbanTaxis, "ND 234 567");
 assert.deepEqual(result, 36);
 
 })
-
+it('should Find all the values of one attribute of objects matching a condition ', function(){
+  var vee = ["Cape Town - Langa", "Cape Town - Cape Town"];
+var result = RouteFinder(capeTownTaxis, "CA 345 678");
+assert.deepEqual(result, vee);
 
 })
+it('should Find all the values of one attribute of objects matching a condition ', function(){
+  var vee = ["Durban - Umbilo", "Durban - University of KZN", "Durban - Umlazi Station"];
+var result = RouteFinder(durbanTaxis, "ND 345 678");
+assert.deepEqual(result, vee);
+
+})
+
+
+});

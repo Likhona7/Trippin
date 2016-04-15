@@ -15,25 +15,3 @@ console.log(result);
 return result;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//
-// var total = 0;
-//
-// totalList.forEach(function(hub){
-//
-//    total += hub.Trips;
-//
-// });
-//   return total;
-// }
