@@ -1,6 +1,7 @@
 var trippin = require("../trippin");
 var minimum = require("../minimum");
 var recordsFinder = require("../recordsFinder");
+var tripsMade4 = require("../tripsMade4");
 var assert = require("assert");
 
 var durbanTaxis = [
@@ -155,5 +156,16 @@ var result = recordsFinder(taxiObj, "ND 123 456");
 assert.deepEqual(result, taxiObj);
 
 });
+it('should Find the total of one attribute for objects in a list matching a condition CA 234 567 ', function(){
+var result = tripsMade4(capeTownTaxis, "CA 234 567");
+assert.deepEqual(result, 11);
+
+})
+it('should Find the total of one attribute for objects in a list matching a condition CA 234 567 ', function(){
+var result = tripsMade4(durbanTaxis, "ND 234 567");
+assert.deepEqual(result, 36);
+
+})
+
 
 })
