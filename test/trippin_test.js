@@ -194,8 +194,8 @@ assert.deepEqual(result, 387);
 
 })
  it("Perform a calculation on attributes of capeTownTaxis grouped of objects", function(){
-   var revenues =[{"CA 123 456" : 309}, {"CA 234 567" : 132}, {"CA 345 678" : 234}];
-var result = eachTaxi(capeTownTaxis, RegistrationNumber);
+   var revenues =[{"CA 123 456" : 309},{"CA 234 567" : 132},{"CA 345 678" : 234}];
+var result = eachTaxi(capeTownTaxis, ["CA 123 456", "CA 234 567", "CA 345 678"]);
 assert.deepEqual(result, revenues);
 
  });
