@@ -2,7 +2,9 @@ var trippin = require("../trippin");
 var minimum = require("../minimum");
 var recordsFinder = require("../recordsFinder");
 var tripsMade4 = require("../tripsMade4");
-var RouteFinder = require("../RouteFinder")
+var RouteFinder = require("../RouteFinder");
+var totalearnings = require("../totalearnings");
+var eachTaxi = require("../eachTaxi");
 var assert = require("assert");
 
 var durbanTaxis = [
@@ -103,19 +105,20 @@ var result = trippin(capeTownTaxis);
 
 });
 
-it('should Find the minimum of one CapeTownTaxis attribute in a list of objects', function(){
-
-var result = minimum(capeTownTaxis);
-assert.equal(result, 9);
-
-})
-
  it('should give every total of Durban trippin taxi', function(){
 
  var result = trippin(durbanTaxis);
  assert.equal(result, 117 );
 
  })
+
+ it('should Find the minimum of one CapeTownTaxis attribute in a list of objects', function(){
+
+ var result = minimum(capeTownTaxis);
+ assert.equal(result, 9);
+
+ })
+
  it('should Find the minimum of one DurbanTaxis attribute in a list of objects', function(){
 
  var result = minimum(durbanTaxis);
@@ -179,6 +182,20 @@ var result = RouteFinder(durbanTaxis, "ND 345 678");
 assert.deepEqual(result, vee);
 
 })
+it("should perform a calculation on capeTownTaxis attributes of objects matching a condition CA 234 567 ", function(){
+var result = totalearnings(capeTownTaxis, "CA 234 567");
+assert.deepEqual(result, 132);
+
+})
+it("should perform a calculation on durbanTaxis attributes of objects matching a condition ND 234 567", function(){
+var result = totalearnings(durbanTaxis, "ND 234 567");
+assert.deepEqual(result, 387);
 
 
+})
+// it("Perform a calculation on attributes of capeTownTaxis grouped of objects", function(){
+//
+//
+// });
+//
 });
