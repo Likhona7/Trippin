@@ -193,9 +193,11 @@ assert.deepEqual(result, 387);
 
 
 })
-// it("Perform a calculation on attributes of capeTownTaxis grouped of objects", function(){
-//
-//
-// });
-//
+ it("Perform a calculation on attributes of capeTownTaxis grouped of objects", function(){
+   var revenues =[{"CA 123 456" : 309}, {"CA 234 567" : 132}, {"CA 345 678" : 234}];
+var result = eachTaxi(capeTownTaxis, RegistrationNumber);
+assert.deepEqual(result, revenues);
+
+ });
+
 });
