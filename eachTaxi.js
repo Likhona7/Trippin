@@ -1,31 +1,19 @@
-module.exports = function(taxiList, RegNum){
+module.exports = function(taxiList){
 
-var record = []
-var result = 0;
+var record = {};
 taxiList.forEach(function(obj){
-if (obj.RegistrationNumber == RegNum) {
-  //console.log(obj.RegistrationNumber);
-  record.push(obj.RegistrationNumber)
- result = result + obj.Trips * obj.Fare;
 
+var regNo = obj.RegistrationNumber;
+var earn =  obj.Fare * obj.Trips;
+//console.log(regNo);
+//console.log(regNo);
+if(record[regNo] === undefined){
+ record[regNo] = 0;
 }
+
+
+record[regNo] += earn;
 });
 console.log(record);
 return record;
-
-
-
-
 }
-// var record = [];
-//
-// seven.forEach(function(obj){
-// if (obj.RegistrationNumber == taxiList) {
-// record.push(obj.Route)
-//
-// }
-// });
-// console.log(record);
-// return record;
-//
-// }
